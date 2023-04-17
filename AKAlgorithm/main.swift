@@ -7,4 +7,4 @@
 
 import Foundation
 
-print(b9086())
+print(b1292())

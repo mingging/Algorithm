@@ -41,20 +41,20 @@ func b9086() {
         guard let first = value.first,
            let last = value.last
         else { return }
-//        print("\(first)\(last)")
+        print("\(first)\(last)")
     }
     
     /// index 값으로 구하는 방법
     for i in 0..<testCaseArray.count {
         let array = Array(testCaseArray[i])
-        print("\(array[0])\(array[array.count-1])")
+//        print("\(array[0])\(array[array.count-1])")
     }
 }
 
 
 /// 수열을 만들고 어느 일정한 구간을 주면 그 구간의 합을 구하라
 func b1292() {
-    /// 첫째 줄에 구간의 시작과 끝을 나타내는 정소 A, B(1 <= A <= B <= 1,000)가 주어진다.
+    /// 첫째 줄에 구간의 시작과 끝을 나타내는 정수 A, B(1 <= A <= B <= 1,000)가 주어진다.
     guard let input = readLine() else { return }
     let inputArray = input.components(separatedBy: " ")
     
@@ -102,4 +102,47 @@ func b1292() {
     let sumNumber2 = numberArray[(startNumber - 1)..<endNumber].map { $0 }.reduce(0) { $0 + $1 }
     
     print(sumNumber2)
+}
+
+/// 수가 주어지면, 그 수의 각 자리수를 내림차순으로 정렬해보자.
+func b1427() {
+    /// 정렬하려고 하는 수 N이 주어진다.
+    let number = readLine()
+    
+    /// N은 1,000,000,000 보다 작거나 같은 자연수이다.
+    guard let number = number,
+        let intNumber = Int(number)
+    else { return }
+    
+    if intNumber > 1000000000 {
+        print("다시 입력해주세요.")
+        return
+    }
+    
+    /// 첫째 줄의 자리수를 내림차순으로 정렬한 수를 출력한다.
+    /// 2143
+    var numberArray = number.map { String($0) }
+  
+    var temp: String = ""
+    
+    /// for문을 돌면서 이전 값과 다음값의 차이를 구한 뒤, 뒤가 더 크면 자리를 바꾼다.
+    for i in 0..<numberArray.count {
+        /// 한 숫자 당 한 줄을 다 돌 때까지 반복한다.
+        print("i numberArray : \(numberArray)")
+        for j in i..<numberArray.count {
+            /// 현재 값 보다 다음 값이 더 큰지 비교한다.
+            print("j numberArray : \(numberArray)")
+            if numberArray[i] < numberArray[j] {
+                /// 다음 값이 더 클 경우 현재 값을 temp에 저장해놓는다.
+                temp = numberArray[i]
+                /// 다음 값을 현재 값에 넣는다.
+                numberArray[i] = numberArray[j]
+                /// 현재 값을 다음 값에 넣는다.
+                numberArray[j] = temp
+            }
+        }
+    }
+    
+    /// 나눠져 있는 배열 합쳐서 출력
+    print(numberArray.joined())
 }

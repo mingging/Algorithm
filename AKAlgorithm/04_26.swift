@@ -47,5 +47,24 @@ func b11656() {
     let s = readLine()!
     
     /// 접미사 배열을 만든다
-    /// 음.. 
+    /// 음.. 일단.. 한 자리씩.. 빼서.. 배열 만들기..?
+    
+    /// 일단 각각 문자 배열 만들고
+    let stringArray = s.map { String($0) }
+    
+    var suffiexsArray: [String] = []
+    var suffixeIndex = 0
+    for _ in 0..<stringArray.count {
+        var tempString = ""
+        for j in suffixeIndex..<stringArray.count {
+            /// index 부터 끝까지 String 만들어서
+            tempString += stringArray[j]
+        }
+        /// 배열에 넣고
+        suffiexsArray.append(tempString)
+        suffixeIndex += 1
+    }
+    
+    /// 내림차순으로 출력
+    print(suffiexsArray.sorted(by: <).joined(separator: "\n"))
 }

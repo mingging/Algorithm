@@ -7,4 +7,8 @@
 
 import Foundation
 
-print(b11656())
+print(bb())
+
+// 123666998
+// 666998
+// 6998888

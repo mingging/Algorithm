@@ -199,6 +199,8 @@ func bb() {
                 numberCountSet[j] = numberCountSet[j] - 1
             }
         }
+        
+        print(numberCountSet)
     }
 
     print(setCount)

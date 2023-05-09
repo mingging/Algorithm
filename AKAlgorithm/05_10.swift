@@ -165,6 +165,47 @@ func b2607() {
    
 }
 
+/// 역전패를 했는지 구하는 프로그램을 작성하여라
+func b14582() {
+    /// 첫째 줄에는 9개의 정수가 주어진다 -> 울림 제미니스가 1회 초, 2회 초 ... 9회 초에 낸 득점
+    let woollimTotalScore = readLine()!
+    let woollimScoreArray: [String] = woollimTotalScore.components(separatedBy: " ")
+    var woollimScore: Int = 0
+    
+    /// 두 번째 줄에는 9개의 정수가 주어진다 -> 스타트링크 걸리버스가 1회 말, 2회 말 ... 9회 말에 낸 득점
+    let startLinkTotalScore = readLine()!
+    let startLinkScoreArray: [String] = startLinkTotalScore.components(separatedBy: " ")
+    var startLinkScore: Int = 0
+    
+    /// 총 경기는 9번 (1회초, 1회말)
+    var match: Int = 1
+    
+    /// 울림이 이긴 적이 있는지 확인
+    var woollimWin: Bool = false
+    
+    /// 경기는 1회 초 -> 1회 말, 2회 초 -> 2회 말 순서로 진행된다.
+    while match <= 9 {
+        /// 울림이 먼저 시작한다.
+        woollimScore += Int(woollimScoreArray[match - 1])!
+        
+        /// 울림이 이기고 있으면 true
+        if woollimScore > startLinkScore {
+            woollimWin = true
+        }
+        
+        /// 스타트링크가 시작한다.
+        startLinkScore += Int(startLinkScoreArray[match - 1])!
+        
+        /// 다음 경기를 시작한다.
+        match += 1
+    }
+    
+    if woollimWin {
+        print("Yes")
+    } else {
+        print("No")
+    }
+}
 
 func test_2607() {
     let count = Int(readLine()!)!

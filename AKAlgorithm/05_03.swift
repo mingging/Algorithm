@@ -37,14 +37,12 @@ func b2851() {
             point += mushrooms[i]
             
             /// 만약 버섯을 먹었는데 먹기 전보다 멀다면 버섯을 먹지 않는다.
-            var afterPlus = point - 100
-            var beforePlus = (point - mushrooms[i]) - 100
+            let afterPlus = point - 100
+            let beforePlus = (point - mushrooms[i]) - 100
             
             /// 만약 포인트가 100을 넘었으나 100에 가깝다면 해당 포인트를 선택한다.
             if point > 100 {
-                afterPlus = afterPlus < 0 ? -(afterPlus) : afterPlus
-                beforePlus = beforePlus < 0 ? -(beforePlus) : beforePlus
-                if afterPlus != beforePlus {
+                if abs(afterPlus) != abs(beforePlus) {
                     point -= mushrooms[i]
                 }
                 break

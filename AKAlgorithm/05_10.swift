@@ -52,7 +52,7 @@ func b2607() {
     let count = Int(readLine()!)!
     
     var words: [String] = []
-    var firstWords: [String] = []
+    var firstWord: [String] = []
     var compareWords: [String] = []
     var wordsIndex = 1
     var matchCount = 0
@@ -66,7 +66,7 @@ func b2607() {
     }
 
     /// 첫  번째 단어를 배열에 저장한다.
-    firstWords = words[0].map { String($0) }
+    firstWord = words[0].map { String($0) }
     
     /// 첫번째 단어와 비슷한 단어가 몇 개인지 출력한다.
     while wordsIndex < words.count {
@@ -74,15 +74,22 @@ func b2607() {
         /// 비교할 단어를 배열에 저장한다.
         compareWords = words[wordsIndex].map { String($0) }
         
-        print("firstWord : \(firstWords)")
+        /// sorting 한 두 단어가 똑같으면 바로 넘긴다.
+        if firstWord.joined() == compareWords.joined() {
+            wordsIndex += 1
+            matchCount += 1
+            continue
+        }
+        
+        print("firstWord : \(firstWord)")
         print("compareWord : \(compareWords)")
         
         /// 비교를 위해 temp 변수를 만든다.
-        var firstTempWords: [String] = firstWords
+        var firstTempWords: [String] = firstWord
         var compareTempWords: [String] = compareWords
 
         /// 두 배열에 같은 값이 있는지 확인한다.
-        for i in 0..<firstWords.count {
+        for i in 0..<firstWord.count {
             for j in 0..<compareWords.count {
                 if firstTempWords[i] == compareTempWords[j] {
                     compareTempWords[j] = ""
@@ -97,62 +104,58 @@ func b2607() {
         
         /// 배열에 남겨진 문자 가져오기
         /// 배열에 남겨진 문자 인덱스 가져오기
-        let extraCompareIndex = compareTempWords.enumerated().map { (index, value) in
-            if !value.isEmpty {
-                return "\(index)"
+        var extraCompareIndex: Int = 0
+        var extraFirstIndex: Int = 0
+        
+        for i in 0..<compareTempWords.count {
+            if !compareTempWords[i].isEmpty {
+                extraCompareIndex = i
+                break
             }
-            return ""
-        }.filter { value in
-            if !value.isEmpty {
-                return true
-            }
-            return false
         }
         
-        let extraFirstIndex = firstTempWords.enumerated().map { (index, value) in
-            if !value.isEmpty {
-                return "\(index)"
+        for i in 0..<firstTempWords.count {
+            if !firstTempWords[i].isEmpty {
+                extraFirstIndex = i
+                break
             }
-            return ""
-        }.filter { value in
-            if !value.isEmpty {
-                return true
-            }
-            return false
         }
+        
+        print("extraCompareIndex : \(extraCompareIndex)")
+        print("extraFirstIndex : \(extraFirstIndex)")
         
         /// 두개의 배열 갯수가 같고, 하나씩 다른 문자가 있다면 치환해준다.
-        if extraFirstIndex.count == extraCompareIndex.count && !extraCompareIndex.isEmpty {
+        if firstWord.count == compareWords.count {
             compareWords = compareWords.enumerated().map { index, value in
                 ///  인덱스가 같으면
-                if index == Int(extraCompareIndex[0])! {
-                    /// 헤딩 인덱스를 firstWord의 index로 바꿔주기
-                    return firstWords[Int(extraFirstIndex[0])!]
+                if index == extraCompareIndex {
+                    /// 해당 인덱스를 firstWord의 index로 바꿔주기
+                    return firstWord[extraFirstIndex]
                 }
                 return String(value)
             }.sorted(by: <)
             
-            print(firstWords)
+            print(firstWord)
             print(compareWords)
             
-        } else if extraCompareIndex.count <= 1 && !extraCompareIndex.isEmpty {
+        } else if firstWord.count <= compareWords.count {
             /// 비교하는 문자가 첫번째 문자보다 더 길 때, 비교하는 문자에서 남는 문자를 제거해준다.
             /// AAAB
             /// AAABB
-            compareWords.remove(at: Int(extraCompareIndex[0])!)
+            compareWords.remove(at: extraCompareIndex)
             compareWords = compareWords.sorted(by: <)
-        } else if extraFirstIndex.count <= 1 && !extraFirstIndex.isEmpty {
+        } else if firstWord.count >= compareWords.count {
             ///첫 문자가 더 길 때 비교하는 문자에 추가해준다.
-            compareWords.append(firstWords[Int(extraFirstIndex[0])!])
+            compareWords.append(firstWord[extraFirstIndex])
             compareWords = compareWords.sorted(by: <)
         }
         
         print(extraCompareIndex)
         
-        print(firstWords)
+        print(firstWord)
         print(compareWords)
         
-        if firstWords.joined() == compareWords.joined() {
+        if firstWord.joined() == compareWords.joined() {
             matchCount += 1
         }
         
@@ -200,11 +203,7 @@ func b14582() {
         match += 1
     }
     
-    if woollimWin {
-        print("Yes")
-    } else {
-        print("No")
-    }
+    print(woollimWin ? print("Yes") : print("No"))
 }
 
 func test_2607() {

@@ -7,9 +7,8 @@
 
 import Foundation
 
-print(b2607())
+print(test_b1092())
 
 // 123666998
 // 666998
 // 6998888
-

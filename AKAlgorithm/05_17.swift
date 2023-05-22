@@ -95,6 +95,11 @@ func b1138() {
     print(lineArray.map { String($0) }.joined(separator: " "))
 }
 
+/// N과 주사위에 쓰여 있는 수가 주어질 때, 보이는 5개의 면에 쓰여 있는 수의 합의 최솟값을 출력해라
+func b1041() {
+    
+}
+
 func test_b1092() {
     let n = Int(readLine()!)!
     let weightLimits = readLine()!.components(separatedBy: " ")

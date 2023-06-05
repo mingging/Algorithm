@@ -10,6 +10,7 @@
 		241E710D29F61ABB00E9D986 /* 04_26.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241E710C29F61ABB00E9D986 /* 04_26.swift */; };
 		243366B929ED0D6A00C92376 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243366B829ED0D6A00C92376 /* main.swift */; };
 		243366C029ED0FC200C92376 /* 04_20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243366BF29ED0FC200C92376 /* 04_20.swift */; };
+		248E9B4E2A2DBEEB00D179F2 /* 06_07.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E9B4D2A2DBEEB00D179F2 /* 06_07.swift */; };
 		2492BF652A00D96C00C4445A /* 05_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2492BF642A00D96C00C4445A /* 05_03.swift */; };
 		24AD2EFB2A09E4F900F70430 /* 05_10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AD2EFA2A09E4F900F70430 /* 05_10.swift */; };
 		393C42612A1281DC002A80FC /* 05_17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393C42602A1281DC002A80FC /* 05_17.swift */; };
@@ -34,6 +35,7 @@
 		243366B529ED0D6A00C92376 /* AKAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AKAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		243366B829ED0D6A00C92376 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		243366BF29ED0FC200C92376 /* 04_20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 04_20.swift; sourceTree = "<group>"; };
+		248E9B4D2A2DBEEB00D179F2 /* 06_07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 06_07.swift; sourceTree = "<group>"; };
 		2492BF642A00D96C00C4445A /* 05_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05_03.swift; sourceTree = "<group>"; };
 		24AD2EFA2A09E4F900F70430 /* 05_10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05_10.swift; sourceTree = "<group>"; };
 		393C42602A1281DC002A80FC /* 05_17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05_17.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				393C42602A1281DC002A80FC /* 05_17.swift */,
 				393C42642A1BB545002A80FC /* 05_25.swift */,
 				393C42662A25BE3E002A80FC /* 05_31.swift */,
+				248E9B4D2A2DBEEB00D179F2 /* 06_07.swift */,
 			);
 			path = AKAlgorithm;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				2492BF652A00D96C00C4445A /* 05_03.swift in Sources */,
 				241E710D29F61ABB00E9D986 /* 04_26.swift in Sources */,
 				24AD2EFB2A09E4F900F70430 /* 05_10.swift in Sources */,
+				248E9B4E2A2DBEEB00D179F2 /* 06_07.swift in Sources */,
 				393C42672A25BE3E002A80FC /* 05_31.swift in Sources */,
 				243366C029ED0FC200C92376 /* 04_20.swift in Sources */,
 			);

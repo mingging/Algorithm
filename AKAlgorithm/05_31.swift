@@ -30,7 +30,7 @@ func b4358() {
     // 백분율 구하기
     for (key, value) in treeArray {
         persentage = (value / allCount) * 100
-
+        
         // 소수점 네번째 자리까지 반올림
         treeArray[key] = round(persentage * 10000) / 10000
     }

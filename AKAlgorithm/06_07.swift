@@ -31,8 +31,11 @@ func hanoi(num: Int, from: Int, to: Int, middle: Int) {
         return
     }
     
+    // 첫번째 기둥에서 가운데 기둥으로 옮기기 위함
     hanoi(num: num-1, from: from, to: middle, middle: to)
     result += "\(from) \(to)\n"
+    //
     count += 1
+    // 가운데 기둥에서 3번째 기둥으로 옮기기 위함
     hanoi(num: num-1, from: middle, to: to, middle: from)
 }

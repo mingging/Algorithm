@@ -37,18 +37,18 @@ func b14495() {
 func test14495() {
     let n = Int(readLine()!)!
 
-    var result: UInt = 0
+    var result: Int = 0
 
-    var resultArray: [UInt] = [UInt](repeating: 1, count: 117)
+    var resultArray: [Int] = [Int](repeating: 1, count: 117)
 
-    if n >= 3 {
-        for i in 3...n {
+    if n > 3 {
+        for i in 4...n {
             result = resultArray[i - 1] + resultArray[i - 3]
             resultArray[i] = result
         }
     }
     
-    print(resultArray[n-1])
+    print(resultArray[n])
 }
 
 // 1, 2, 3 더하기

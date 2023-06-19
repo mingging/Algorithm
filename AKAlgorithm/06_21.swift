@@ -105,11 +105,11 @@ func b18111() {
     // 땅을 만든다
     var landArray: [[Int]] = [[Int](repeating: 0, count: m)]
     
-    for i in 0..<n {
-        let jLand = readLine()!.split(separator: " ")
-        for j in 0..<jLand.count {
-            landArray[i][j] = Int(jLand[j])!
-        }
+    for i in 0..<m {
+//        let jLand = readLine()!.split(separator: " ")
+//        for j in 0..<jLand.count {
+//            landArray[i][j] = Int(jLand[j])!
+//        }
     }
     
     

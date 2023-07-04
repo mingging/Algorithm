@@ -7,7 +7,7 @@
 
 import Foundation
 
-print(b18111())
+print(b16120())
 
 // 123666998
 // 666998

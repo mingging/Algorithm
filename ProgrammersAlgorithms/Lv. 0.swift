@@ -66,3 +66,8 @@ func solution_181915(_ my_string:String, _ index_list:[Int]) -> String {
     
     return result
 }
+
+func solution_181907(_ my_string: String, _ n: Int) -> String {
+    
+    return "\(my_string.prefix(n))"
+}

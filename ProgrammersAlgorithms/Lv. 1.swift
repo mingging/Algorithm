@@ -83,3 +83,40 @@ func solution_160586(_ keymap:[String], _ targets:[String]) -> [Int] {
     
     return resultIndex
 }
+
+// 둘만의 암호
+func solution_155652(_ s: String, _ skip: String, _ index: Int) -> String {
+    // 알파벳(a-z)이 배열이 들어있는 변수
+    let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    
+    // skip 이 제외된 알파벳 배열
+    let skipArray = alphabet.filter { !skip.map { String($0) }.contains($0) }
+    print(skipArray)
+    print(skipArray.count)
+    
+    var findString = ""
+    
+    // 구성된 알파벳에서 현재 위치를 찾아서 index 만큼 뒤의 값을 구하기
+    let stringArray = s.map { String($0) }
+    for i in 0..<stringArray.count {
+        var currentIndex = (skipArray.firstIndex(of: stringArray[i]) ?? 0) + index
+        
+        //
+        
+        print("currentIndex : \(currentIndex)")
+        
+        // 만약 알파벳의 갯수가 전체 배열의 갯수를 넘어가면 다시 처음으로
+        while currentIndex > skipArray.count - 1 {
+            currentIndex = currentIndex - skipArray.count
+            print("!!! currentIndex : \(currentIndex)")
+        }
+        
+        findString += skipArray[currentIndex]
+        
+        print("currentIndex : \(currentIndex)")
+        print("findString : \(findString)")
+    }
+    
+    
+    return findString
+}

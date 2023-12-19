@@ -7,4 +7,5 @@
 
 import Foundation
 
-print(solution_160586(["BC"], ["AC", "BC"]))
+print(solution_155652( "klmnopqrstuvwxyz", "abcdefghij", 20))
+
